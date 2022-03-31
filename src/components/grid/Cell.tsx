@@ -47,7 +47,9 @@ export const Cell = ({
   return (
     <div className={classes} style={{ animationDelay }}>
       <div className="letter-container" style={{ animationDelay }}>
-        {value}
+        {
+          value ? <img src={'/image/' + value + '.png'} alt={value} style={{width: '40px'}}/> : ''
+        }
       </div>
     </div>
   )

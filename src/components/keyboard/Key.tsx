@@ -17,7 +17,7 @@ type Props = {
 export const Key = ({
   children,
   status,
-  width = 40,
+  width = 58,
   value,
   isEmoji = false,
   onClick,
@@ -56,9 +56,12 @@ export const Key = ({
     event.currentTarget.blur()
   }
 
+
   return (
     <button style={styles} className={classes} onClick={handleClick}>
-      {children || value}
+      {
+        isEmoji ? <img src={'/image/' + value + '.png'} alt={value} style={{width: '40px'}}/> : children || value
+      }
     </button>
   )
 }

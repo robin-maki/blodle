@@ -1,8 +1,6 @@
 import { BaseModal } from './BaseModal'
 import { SettingsToggle } from './SettingsToggle'
 import {
-  HARD_MODE_DESCRIPTION,
-  HIGH_CONTRAST_MODE_DESCRIPTION,
 } from '../../constants/strings'
 
 type Props = {
@@ -27,24 +25,22 @@ export const SettingsModal = ({
   handleHighContrastMode,
 }: Props) => {
   return (
-    <BaseModal title="Settings" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="설정" isOpen={isOpen} handleClose={handleClose}>
       <div className="flex flex-col mt-2 divide-y">
         <SettingsToggle
-          settingName="Hard Mode"
+          settingName="하드 모드"
           flag={isHardMode}
           handleFlag={handleHardMode}
-          description={HARD_MODE_DESCRIPTION}
         />
         <SettingsToggle
-          settingName="Dark Mode"
+          settingName="다크 모드"
           flag={isDarkMode}
           handleFlag={handleDarkMode}
         />
         <SettingsToggle
-          settingName="High Contrast Mode"
+          settingName="고대비 모드"
           flag={isHighContrastMode}
           handleFlag={handleHighContrastMode}
-          description={HIGH_CONTRAST_MODE_DESCRIPTION}
         />
       </div>
     </BaseModal>
